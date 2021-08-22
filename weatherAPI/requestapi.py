@@ -16,7 +16,7 @@ def get_weather(city, country):
     """
     
     api_key = os.environ.get('WEATHER_SECRET_APIKEY')
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&appid={api_key}&mode=xml" # 3rd API URL
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&appid={api_key}&mode=xml"  # 3rd API"api.openweathermap.org" URL
     
     response = requests.get(url)                               # Response object
     
@@ -26,7 +26,7 @@ def get_weather(city, country):
     weather_data = current_data['current']                     # Extracting the relevant weather data
     
     
-    # . . . . . . . .Formatting the weather variables  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+    # . . . . . . . .Weather variables Configuration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 
     location_name = "{}, {}".format(weather_data['city']['@name'], 
         weather_data['city']['country'])
