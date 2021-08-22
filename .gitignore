@@ -1,0 +1,16 @@
+# Globant_exercise
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Media Files
+*.jpg
+static/
+media/
+# Environments
+.env
+
+# Django
+*.sqlite3
