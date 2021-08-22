@@ -1,4 +1,5 @@
 
+import os
 import requests
 import pdb
 from datetime import datetime
@@ -6,7 +7,7 @@ from datetime import datetime
 
 def get_weather(city, country):
 
-    api_key = "a6137ea16e87e2bc163535233cefd4e6"
+    api_key = os.environ.get('WEATHER_SECRET_APIKEY')
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city},{country}&appid={api_key}"
 
     response = requests.get(url) #.json()
@@ -16,41 +17,40 @@ def get_weather(city, country):
     # Fields units API response:  https://openweathermap.org/current#parameter
     
     
-    city = data['name']
-    country = data['sys']['country']
-    location_name = "{},{}".format(city, country)
+    #city = data['name']
+    #country = data['sys']['country']
+    location_name = "{},{}".format(data['name'], data['sys']['country'])
     tempc = data['main']['temp'] - 273.15
     tempf = (tempc * (9/5)) + 32
     pressure = data['main']['pressure']
     humidity = data['main']['humidity']
-    sunrise_val = data['sys']['sunrise']
-    sunrise = f"{sunrise_val}%"
-    sunset = data['sys']['sunset']
+    #sunrise_val = data['sys']['sunrise'] # unix
+    sunrise = datetime.fromtimestamp(int(data['sys']['sunrise'])).strftime('%H:%M hrs')
+    sunset = datetime.fromtimestamp(int(data['sys']['sunset'])).strftime('%H:%M hrs')
     coord_lat = data['coord']['lat']
     coord_lon = data['coord']['lon']
     dt = data['dt'] # UNIX Timestamp
-    requested_time = datetime.fromtimestamp(int(dt))
- 
+    requested_time = datetime.fromtimestamp(int(dt)).strftime('%b %dth, %Y - %H:%M:%S    hrs')
+    # .format(now=datetime.now().strftime('%b %dth, %Y - %H:%M hrs')
+    
 
 
     weather_dict = {
 
         'location_name': location_name,
-        'temperature': [ tempc, tempf ],
-        'wind': None,
-        'cloudiness': None,
-        'pressure': pressure,
-        'humidity': None,
-        'sunrise': sunrise,
+        'temperature': '%.2f°C, %.2f°F' % (tempc,tempf), #'{}%.2f °C , {} °F'.format(tempc, tempf),
+        'wind': None,                                    # Gentle breeze, 3.6 m/s, west-northwest",
+        'cloudiness': None,                              # "Scattered clouds",
+        'pressure': '{} hpa'.format(pressure),
+        'humidity': '{} %'.format(humidity),
+        'sunrise': sunrise, 
         'sunset': sunset,
-        'geo_coordinates': [coord_lat, coord_lon],
+        'geo_coordinates': '[{}, {}]'.format(coord_lat, coord_lon),
         'requested_time': requested_time,
 
     }
 
-    return {
-        'weather_dict': weather_dict,
-    }
+    return weather_dict
 
 """
 # Driver code

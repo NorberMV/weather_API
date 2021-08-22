@@ -27,13 +27,13 @@ def weather_detail(request):                               # city and country at
     city = serializer.validated_data['city']     # SO FAR SO GOOD!
     
     weather_data = get_weather(city, country)
-    pdb.set_trace()
+    #pdb.set_trace()
     
     # Cache logic
     if cache_data := cache.get("{}-{}".format(country, city)): # := walrus operator 
         return Response(weather_data)
     
-    cache.set("{}-{}".format(country, city), weather_data, 60*2) # cache.set(key="{}-{}".format(country, city), value, timeout=DEFAULT_TIMEOUT, version=None)
+    cache.set("{}-{}".format(country, city), weather_data, timeout=60*2) # cache.set(key="{}-{}".format(country, city), value, timeout=DEFAULT_TIMEOUT, version=None)
     
 
     return Response(weather_data)
