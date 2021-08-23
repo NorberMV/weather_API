@@ -3,7 +3,7 @@
 # Weather API
 This is an API built with Django Rest Framework, and allows to retrieve real time weather data for any location including over 200,000 cities from a third API called Open Weather (https://openweathermap.org/api).
 
-The API support the following endpoint: /weather?city=$City&country=$Country&
+The API support the following endpoint: <strong>/weather?city=$City&country=$Country&</strong>
 where the variable "City" is a string. Example: Valledupar, and the variable "Country" is a country code of two characters in lowercase. Example: co
 
 
@@ -76,7 +76,7 @@ Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-Django version 3.2.6, using settings 'tucredito_site.settings'
+Django version 3.2.6, using settings 'api_config.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
@@ -90,7 +90,7 @@ ex:
   > Go to  http://localhost:8000/weather?city=Miami&country=us&
 
 
-<img src="https://github.com/NorberMV/darien_test/blob/master/fotos/admin.png" width="600">
+<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/request_api.png" width="600">
 
 
 
