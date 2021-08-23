@@ -1,22 +1,23 @@
-# Globant_exercise
+# Globant_exercise: Weather API
 
-# Weather API
+## Weather API
 This is an API built with Django Rest Framework, and allows to retrieve real time weather data for any location including over 200,000 cities from a third API called Open Weather (https://openweathermap.org/api).
 
-The API support the following endpoint: <strong>/weather?city=$City&country=$Country&</strong>
+The API support the following endpoint: <strong>/weather?city=$City&country=$Country&</strong>.
+
 where the variable "City" is a string. Example: Valledupar, and the variable "Country" is a country code of two characters in lowercase. Example: co
 
 
 
 ## Content
-* [Weather ](#Weather API)
+* [Weather_API](#Weather API)
 * [Technologies](#Tecnologies)
 * [Setup](#Setup)
 * [Usage](#Usage)
 * [Testing](#Testing)
 
 
-# Technologies
+## Technologies
 
 This project uses the following Python dependencies:
 * Python >=3.8
@@ -90,15 +91,31 @@ ex:
   > Go to  http://localhost:8000/weather?city=Miami&country=us&
 
 
-<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/request_api.png" width="600">
+<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/request_api.png" width="700">
 
 
 
-> Luego ir a la url http://127.0.0.1:8000/crear-clientes/  , la cual nos permite crear y registrar información de clientes.
+## Testing
+The tests are using REST framework's test case classes and are defined in the file "weatherAPI/tests.py".
+The test will check the correct functioning of the code within the functions of the views and the modules created
+sending requests and comparing them with expected values.
+In order to carry out the tests, you need to have running the API locally and open another terminal.
 
-<img src="https://github.com/NorberMV/darien_test/blob/master/fotos/crear.png" width="600">
 
+```python
+# Go to the project file "globant_exercise"
+$python manage.py test
 
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.983s
+
+OK
+Destroying test database for alias 'default'...
+
+```
 
 
 
