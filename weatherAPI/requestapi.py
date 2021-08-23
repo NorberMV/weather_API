@@ -34,14 +34,16 @@ def get_weather(city, country):
     # Temperatures variables, given in °K  
     tempc = float(weather_data['temperature']['@value']) - 273.15  # Temperature in °C  ; Kelvin to Celsius formula:( °K − 273.15 = °C)
     tempf = (tempc * (9/5)) + 32                                   # Temperature in °K
-      
-    # Wind variables
-    wind_name = weather_data['wind']['speed']['@name']             
-    wind_descript_name = wind_name if wind_name != None else "No description available" # wind name ex: "Gentle breeze"
-    wind_val = weather_data['wind']['speed']['@value']
-    wind_value = wind_val if wind_val != None else "No description available"           # wind value in m/s
-    wind_dir = weather_data['wind']['direction']['@name']
-    wind_direction = wind_dir if wind_dir != None else "No description available"       # Wind direction ex: "west-northwest"
+    
+
+    """Wind variables, Sometimes there is low wind and the API returns None in the 
+        values "speed" and "direction, so that´s why the conditionals implementation in the 
+        wind values. """
+    wind_speed = weather_data['wind']['speed']                              # Stores the value of wind speed             
+    wind_descript_name = weather_data['wind']['speed']['@name'] if wind_speed != None else "No description available" # wind name ex: "Gentle breeze"
+    wind_value = weather_data['wind']['speed']['@value'] if wind_speed != None else "No description available" # wind value in m/s
+    wind_dir = weather_data['wind']['direction']                            # Stores the value of wind direction
+    wind_direction = weather_data['wind']['direction']['@name'] if wind_dir != None else "No description available"       # Wind direction ex: "west-northwest"
     
     cloudiness = weather_data['clouds']['@name']                           # cloudiness name ex: "Scattered clouds"
     pressure = weather_data['pressure']['@value']                          # Pressure value in hpa
