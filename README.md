@@ -1,6 +1,6 @@
 # Globant_exercise: Weather API
 
-<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/WeatherApp.png" width="100">
+<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/WeatherApp.png" width="300">
 
 
 
