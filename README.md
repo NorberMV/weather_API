@@ -6,8 +6,8 @@ Es una aplicación web basada en el framework para aplicaciones web de Python, D
 
 
 ## Content
-* [Weather API](#Weather API)
-* [Technologies](#tecnologias)
+* [Weather ](#Weather API)
+* [Technologies](#Tecnologies)
 * [Setup](#Setup)
 * [Usage](#Usage)
 * [Testing](#Testing)
