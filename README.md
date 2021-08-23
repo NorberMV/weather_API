@@ -99,7 +99,7 @@ $python manage.py migrate
 $python manage.py createcachetable
 
 ```
-For caching uses a low-level cache API who is used to store objects in the database cache table.
+For caching this API uses a low-level cache API who is used to store objects in the database cache table.
 The data stored will be available for 2 minutes.
 
 ```python
