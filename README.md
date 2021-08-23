@@ -1,5 +1,9 @@
 # Globant_exercise: Weather API
 
+<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/WeatherApp.png" width="100">
+
+
+
 ## Overview
 This is an API built with Django Rest Framework, and allows to retrieve real time weather data for any location including over 200,000 cities from a third API called Open Weather (https://openweathermap.org/api).
 
