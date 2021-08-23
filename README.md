@@ -1,8 +1,11 @@
 # Globant_exercise
 
 # Weather API
-This API allows to retrieve weather data from a third API called 
-Es una aplicación web basada en el framework para aplicaciones web de Python, Django que permite crear, listar y actualizar información de los usuarios del sistema. Tiene integrada una base de datos en PostgresQL administrada por AWS RDS.
+This is an API built with Django Rest Framework, and allows to retrieve real time weather data for any location including over 200,000 cities from a third API called Open Weather (https://openweathermap.org/api).
+
+The API support the following endpoint: /weather?city=$City&country=$Country&
+where the variable "City" is a string. Example: Valledupar, and the variable "Country" is a country code of two characters in lowercase. Example: co
+
 
 
 ## Content
@@ -16,7 +19,7 @@ Es una aplicación web basada en el framework para aplicaciones web de Python, D
 # Technologies
 
 This project uses the following Python dependencies:
-
+* Python >=3.8
 * Django==3.2.6
 * djangorestframework==3.12.4
 * pytz==2021.1
@@ -32,7 +35,6 @@ This project uses the following Python dependencies:
 
 ## Setup
 To run locally
-#NEEDS PYTHON > 3.8!!!!!!!!!!!!!!
 
 ```python
 # Within a local folder, Clone this repository
@@ -47,12 +49,11 @@ source .env/bin/activate
 pip install -r requirements.txt
 
 ```
->> 
 
 ```python
-# Configure the given environment variables
-$ export DJANGO_SECRET_KEY='xxxxxxxxxx'
-$ export WEATHER_SECRET_APIKEY='xxxxxxxxxx'
+# Configure the given environment variables in your O.S.
+DJANGO_SECRET_KEY='xxxxxxxxxx'
+WEATHER_SECRET_APIKEY='xxxxxxxxxx'
 ```
 
 ```python

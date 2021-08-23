@@ -20,8 +20,8 @@ from django.core.cache import cache
 
 @api_view(['GET'])
 def weather_detail(request):                                
-    """Receive the client request adn return a JSON 
-        response ."""
+    """Receive the client request and return a JSON 
+        response with the given city and country."""
     
     serializer = WeatherSerializer(data=request.GET)           # Pass the request data to the serializer WeatherSerializer() model  
     serializer.is_valid()                                      # return True if serializer fields are valid
