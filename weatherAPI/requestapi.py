@@ -33,7 +33,7 @@ def get_weather(city, country):
 
     # Temperatures variables, given in °K  
     tempc = float(weather_data['temperature']['@value']) - 273.15  # Temperature in °C  ; Kelvin to Celsius formula:( °K − 273.15 = °C)
-    tempf = (tempc * (9/5)) + 32                                   # Temperature in °K
+    tempf = (tempc * (9/5)) + 32                                   # Temperature from °K to °F
     
 
     """Wind variables, Sometimes there is low wind and the API returns None in the 
@@ -60,7 +60,7 @@ def get_weather(city, country):
     requested_time = weather_data['lastupdate']['@value']                  
     
 
-    # Formatted data dictionary   
+    # Final formatted data dictionary   
     weather_dict = {
 
         'location_name': location_name,
@@ -77,4 +77,4 @@ def get_weather(city, country):
 
     }
 
-    return weather_dict
+    return weather_dict                                                   # Send the dictionary to the view
