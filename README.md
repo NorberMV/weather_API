@@ -10,8 +10,8 @@ where the variable "City" is a string. Example: Valledupar, and the variable "Co
 
 
 ## Content
-* [Overview](#WeatherAPI)
-* [Technologies](#Tecnologies)
+* [Overview](#Overview)
+* [Technologies](#Technologies)
 * [Setup](#Setup)
 * [Usage](#Usage)
 * [Testing](#Testing)
