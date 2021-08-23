@@ -20,7 +20,7 @@ where the variable "City" is a string. Example: Valledupar, and the variable "Co
 ## Technologies
 
 This project uses the following Python dependencies:
-* Python >=3.8
+* Requires Python >=3.8
 * Django==3.2.6
 * djangorestframework==3.12.4
 * pytz==2021.1
@@ -44,6 +44,35 @@ $ git clone https://github.com/NorberMV/Globant_exercise.git
 
 ```
 ```python
+# The project has the following structure
+
+.
+├── README.md
+├── api_config
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── pictures
+│   └── request_api.png
+├── requirements.txt
+└── weatherAPI
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── migrations
+    │   └── __init__.py
+    ├── models.py
+    ├── requestapi.py
+    ├── serializers.py
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+
+```
+```python
 # Create and activate a virtual environment in order to install the requirements.txt
 python3 -m venv .env
 source .env/bin/activate
@@ -58,7 +87,7 @@ WEATHER_SECRET_APIKEY='xxxxxxxxxx'
 ```
 
 ```python
-# Run the database migrations
+# Run the database migrations, this creates automatically a db.sqlite3 file
 python manage.py migrate
 
 ```
