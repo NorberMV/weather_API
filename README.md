@@ -76,9 +76,9 @@ $ git clone https://github.com/NorberMV/Globant_exercise.git
 ```
 ```python
 # Create and activate a virtual environment in order to install the requirements.txt
-python3 -m venv .env
-source .env/bin/activate
-pip install -r requirements.txt
+$python -m venv .env
+$source .env/bin/activate
+$pip install -r requirements.txt
 
 ```
 
@@ -90,7 +90,7 @@ WEATHER_SECRET_APIKEY='xxxxxxxxxx'
 
 ```python
 # Run the database migrations, this creates automatically a db.sqlite3 file
-python manage.py migrate
+$python manage.py migrate
 
 ```
 ```python
