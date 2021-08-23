@@ -10,7 +10,7 @@ where the variable "City" is a string. Example: Valledupar, and the variable "Co
 
 
 ## Content
-* [Overview](#Weather API)
+* [Overview](#WeatherAPI)
 * [Technologies](#Tecnologies)
 * [Setup](#Setup)
 * [Usage](#Usage)
@@ -44,7 +44,9 @@ $ git clone https://github.com/NorberMV/Globant_exercise.git
 
 ```
 ```python
-# The project has the following structure
+# The project has the following file structure
+# Once we carry out the migrations a db.sqlite3 database 
+#   will be installed automatically.
 
 .
 ├── README.md
@@ -97,6 +99,8 @@ python manage.py migrate
 $python manage.py createcachetable
 
 ```
+For caching uses a low-level cache API who is used to store objects in the database cache table.
+The data stored will be available for 2 minutes.
 
 ```python
 # Run the local server
@@ -121,6 +125,15 @@ ex:
 
 
 <img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/request_api.png" width="700">
+
+
+> Closer view from the JSON response of the requested city and country.
+ex:
+  >   http://localhost:8000/weather?city=Medellin&country=co&
+
+<img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/jsonResponse.png" width="700">
+
+
 
 
 
