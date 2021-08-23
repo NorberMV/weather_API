@@ -1,6 +1,6 @@
 # Globant_exercise: Weather API
 
-## Weather API
+## Overview
 This is an API built with Django Rest Framework, and allows to retrieve real time weather data for any location including over 200,000 cities from a third API called Open Weather (https://openweathermap.org/api).
 
 The API support the following endpoint: <strong>/weather?city=$City&country=$Country&</strong>.
@@ -10,7 +10,7 @@ where the variable "City" is a string. Example: Valledupar, and the variable "Co
 
 
 ## Content
-* [Weather_API](#Weather API)
+* [Overview](#Weather API)
 * [Technologies](#Tecnologies)
 * [Setup](#Setup)
 * [Usage](#Usage)
