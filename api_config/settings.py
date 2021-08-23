@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')#'django-insecure-#ac#8*gt@zmb9#nrjxa80wu-3@%u%!9j7^-$8z_fbwn$7tu9$y'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,17 +81,16 @@ WSGI_APPLICATION = 'api_config.wsgi.application'
 
 # Database caching Confifuration
 """
-Creating the cache table¶
-
-Before using the database cache, you must create the cache table with this command:
-
-$python manage.py createcachetable
+Cache Configuration
+* Creating the cache table¶
+* Before using the database cache, you must create the cache table with this command:
+* $python manage.py createcachetable
 
 """
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        'LOCATION': 'my_cache_table',
+        'LOCATION': 'my_cache_table',                              # Cache table name in the database
     }
 }
 
