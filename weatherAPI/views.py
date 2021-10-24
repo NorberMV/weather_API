@@ -9,7 +9,6 @@ from .serializers import WeatherSerializer
 
 # Utilities
 import json
-import pdb
 from . requestapi import get_weather
 
 # Cache
