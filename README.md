@@ -1,4 +1,4 @@
-# Globant_exercise: Weather API
+# Weather API
 
 <img src="https://github.com/NorberMV/Globant_exercise/blob/master/pictures/WeatherApp.png" width="300">
 
